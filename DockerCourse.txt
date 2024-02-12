@@ -67,3 +67,16 @@ docker logs 55 --tail 10 -f
 #sonrasında 1. containeri durdurun.
 2. containerin loglarını ekranda gösterin.
 
+#container silme ve imaj silme komutları
+
+docker rm 55 
+#Container çalılıyorsa silmez silmek için force
+
+docker rm 55 -f
+
+docker ps -qa
+docker rm $(docker ps -qa) 
+
+docker rmi <imageid> 
+docker rmi fd
+

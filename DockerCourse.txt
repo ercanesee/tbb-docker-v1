@@ -1,0 +1,69 @@
+#version bilgisi pğrenmek
+docker version
+
+#Herhangi bir Private repo ve Docker hub'dan imaj indirmek için.
+docker pull <imagename>
+docker pull ubuntu
+
+shift + insert
+
+#Tage göre docker imaj indirme işlemi
+dokcer pull <imagename>:<tag>
+dokcer pull python:windowsservercore-1809
+
+
+#busybox imajını indirin.
+#redis imajının 6.0-alpine versiyonunu indirin.
+#.Net core ASP NET imajının 7.0 versiyonunu indirin.
+
+#İndirdiğimiz imajları görüntülemek için.
+docker images 
+docker image ls
+
+#bir imajdan container ayağa kaldırmak için.
+docker run <options> <image> <command> <arg>
+docker run --name ercan ubuntu echo "Hello,World"
+
+#busybox ve ubuntu imajlarını kullanarak hellow world çıktısı yazan containerları oluşturun.
+
+#containerları listelemek için
+docker ps #sadece çalışan
+docker ps -a #çalışan veya çalışmayan
+
+#container içinde çalışmak için
+docker run -it <image> <terminal> <bash or sh>
+docker run -it ubuntu bash
+
+docker run -it -e ORTAM='dasdad' 
+
+#bir adet container ayaga kaldırıp terminali açalım açalım
+#ama ORTAM adında bir env değişken verelim değeride TEST olsun
+#container içerisine girdiğimizde printenv ile envimizi görüntüleyelim.
+
+
+#ubuntu imajından bir container türetelim ve içierisine figlet kuralım
+#ve figleti örnekteki gibi çalıştıralım.
+
+#durmuş bir container terminal ile nasıl çalıştırılır.
+docker start -i <containerid> or <containername> 
+docker start -i 03
+
+#container durdurmak için
+
+docker stop <containerid>
+
+
+#arka planda bir container çalıştırmak için
+docker run -d --name <same name> <image> <cmd>
+docker run -d --name test ubuntu sleep 10
+
+
+#container logları görüntülemek içinde
+docker logs <options> <containerid>
+
+docker logs 55 --tail 10 -f
+
+#Clock uygulamasını 2 adet container da arka planda ayağa kaldırın.
+#sonrasında 1. containeri durdurun.
+2. containerin loglarını ekranda gösterin.
+

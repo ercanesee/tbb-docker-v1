@@ -80,3 +80,11 @@ docker rm $(docker ps -qa)
 docker rmi <imageid> 
 docker rmi fd
 
+#bir containeri port olarak dışarıya açma.
+docker run -d -p <hostport>:<containerport> <image>
+docker run -d -p 9090:80 --name demo nginx 
+
+#container veya tüm docker objelerinin konfigürasyonlarını listelemek için.
+docker inspect <dockerobjectid>
+
+docker inspect 0f

@@ -137,3 +137,22 @@ docker commit 08 pwsh:1v
 docker un -d --name demo pwsh:1v pwsh Time.ps1
 
 docker commit -c 'CMD ["flask","run","--host=0.0.0.0"]' -c 'WORKDIR /app' a70 pythondemo:1v
+
+#bana nginx index htmli dışarıdan aldığınız bir container oluşturun.
+/usr/share/nginx/html
+
+mkdir nginxfiles
+cd nginxfiles
+mkdir index
+
+vi index.html
+i tusuna bas aşağıda insert gör.
+<h2>ERcan ESE</h2>
+
+esc tuşuna bas
+:wq!
+enter 
+
+docker run -d -p <hostport>:<containerport> -v <hostpath>:<containerpath> --name <containername> <imagename>
+
+

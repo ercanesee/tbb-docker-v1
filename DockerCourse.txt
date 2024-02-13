@@ -136,3 +136,4 @@ docker commit 08 pwsh:1v
 
 docker un -d --name demo pwsh:1v pwsh Time.ps1
 
+docker commit -c 'CMD ["flask","run","--host=0.0.0.0"]' -c 'WORKDIR /app' a70 pythondemo:1v

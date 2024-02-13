@@ -29,3 +29,8 @@ C:\Users\EE\Desktop\Project Train\TBB\mvcapp\obj\Debug\net7.0\refint\mvcapp.dll
 C:\Users\EE\Desktop\Project Train\TBB\mvcapp\obj\Debug\net7.0\mvcapp.pdb
 C:\Users\EE\Desktop\Project Train\TBB\mvcapp\obj\Debug\net7.0\mvcapp.genruntimeconfig.cache
 C:\Users\EE\Desktop\Project Train\TBB\mvcapp\obj\Debug\net7.0\ref\mvcapp.dll
+C:\Users\EE\Desktop\Project Train\TBB\mvcapp\bin\Debug\net7.0\pub\web.config
+C:\Users\EE\Desktop\Project Train\TBB\mvcapp\bin\Debug\net7.0\pub\appsettings.Development.json
+C:\Users\EE\Desktop\Project Train\TBB\mvcapp\bin\Debug\net7.0\pub\appsettings.json
+C:\Users\EE\Desktop\Project Train\TBB\mvcapp\bin\Debug\net7.0\pub\mvcapp.deps.json
+C:\Users\EE\Desktop\Project Train\TBB\mvcapp\bin\Debug\net7.0\pub\mvcapp.runtimeconfig.json

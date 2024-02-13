@@ -129,3 +129,10 @@ ctrl+x enter
 
 docker cp index.html 09:/usr/share/nginx/html/index.html
 
+
+#container imaja çevirmek için
+docker commit <containerid> <newimagename>:<tag>
+docker commit 08 pwsh:1v 
+
+docker un -d --name demo pwsh:1v pwsh Time.ps1
+

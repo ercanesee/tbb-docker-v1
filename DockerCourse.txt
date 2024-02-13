@@ -117,3 +117,15 @@ docker cp 09:/usr/demo .
 #container ile imaj arasındaki farkları gösteren komut nedir
 docker diff <containerid>
 docker diff 0f
+
+
+mkdir nginx
+cd nginx
+
+apk add nano
+nano index.html
+<h2>ERCAN ESE</h2>
+ctrl+x enter
+
+docker cp index.html 09:/usr/share/nginx/html/index.html
+

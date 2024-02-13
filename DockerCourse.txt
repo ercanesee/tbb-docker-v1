@@ -101,9 +101,19 @@ docker exec 0f cat /etc/os-release
 
 apt update
 apt install nano
-cd /user/share/nginx/html
+cd /usr/share/nginx/html
 ls
 
 nano index.html
 ctrl+x
 y
+
+
+#containerdan veya contaninera dosya kopyalamak için
+docker cp <containerid>:</sourcepath> <hostpath>
+docker cp 09:/usr/demo .
+
+
+#container ile imaj arasındaki farkları gösteren komut nedir
+docker diff <containerid>
+docker diff 0f

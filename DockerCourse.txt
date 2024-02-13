@@ -88,3 +88,22 @@ docker run -d -p 9090:80 --name demo nginx
 docker inspect <dockerobjectid>
 
 docker inspect 0f
+
+#bir container restart etmek için 
+docker restart <containerid>
+docker restart 0f
+
+#container içerisine girerek veya dışarıdan komut çalıştırmak için
+docker exec <option> <containerid> <cmd> <arg>
+
+docker exec -it 0f bash
+docker exec 0f cat /etc/os-release
+
+apt update
+apt install nano
+cd /user/share/nginx/html
+ls
+
+nano index.html
+ctrl+x
+y

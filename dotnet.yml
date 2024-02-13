@@ -1,0 +1,56 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+env:
+ BUILDID: "1.0.$GITHUB_RUN_NUMBER"
+ 
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+    - name: Set Environment Variables
+      run: |
+        echo "BUILD_VER=1.0.$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
+    - name: Set Environment Variables Show
+      run: |
+        printenv
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+        
+    - name: Build
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        file: ./Dockerfile
+        push: false
+        tags: ercanesee/mvcpapp:${{ github.run_number }}
+        load: true
+        
+  deploy:
+    name: Deploy
+    runs-on: self-hosted 
+    needs: build
+    environment: Prod
+    steps:
+    - name: Delete Old Docker Image
+      run: |
+        docker rm mvcapp --force
+    - name: Run Docker Image
+      run: |
+        docker run -d -p 8080:80 --name mvcapp ercanesee/mvcpapp:${{ github.run_number }}
